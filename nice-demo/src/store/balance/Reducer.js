@@ -2,9 +2,9 @@ export const BALANCE_FETCHED = 'BALANCE_FETCHED';
 export const BALANCE_FETCH_ERROR = 'BALANCE_FETCH_ERROR';
 
 const initialState = {
-  account: {},
   transactions: [],
   currency: '',
+  account: {},
   fetchError: false
 
 }

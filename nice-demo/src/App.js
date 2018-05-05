@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import {connect} from 'react-redux'
 import * as balanceActions from './store/balance/Actions'
-import BalanceList from './containers/BalanceList'
+
+import './App.css';
+import Balance from './containers/Balance'
+import Account from './containers/Account'
 
 class App extends Component {
   
@@ -14,12 +15,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header> */}
+        <header className="App__Header">
+          <Account />
+        </header>
 
-        <BalanceList />
+        <section className="App_Content">
+          <Balance />
+        </section>
       </div>
     );
   }

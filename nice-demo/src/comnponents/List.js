@@ -1,19 +1,12 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux'
+import React from 'react';
 
-
-class List extends Component {
-    render() {
-      return (
-        <div>im a list</div>
-      )
-    }
-  }
-  
-function mapStateToProps(state) {
-  return {
-    balance: state.balance.transactions,
-  }
+const List = (props) => {
+  return (
+    <div className="list-group">
+          {props.children}
+    </div>
+  )
 }
 
-export default connect(mapStateToProps, null)(List)
+export default List;
+
