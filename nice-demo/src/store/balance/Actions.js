@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BALANCE_FETCHED, BALANCE_FETCHE_ERROR } from './balanceReducer';
+import { BALANCE_FETCHED, BALANCE_FETCH_ERROR } from './Reducer';
 
 const apiUrl = 'http://localhost:8000/api/getbalance';
 
@@ -10,7 +10,7 @@ export function loadBalance() {
             dispatch({type: BALANCE_FETCHED, payload: res})
         })
         .catch(err => {
-            dispatch({type: BALANCE_FETCHE_ERROR, payload: err})
+            dispatch({type: BALANCE_FETCH_ERROR, payload: err})
         })    
     }
 }
