@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import * as balanceActions from './store/balance/Actions'
 
-import './App.css';
+import loadBalance from './store/balance/actions'
 import Balance from './containers/Balance'
 import Account from './containers/Account'
+import './App.css';
 
 class App extends Component {
   
@@ -19,7 +19,7 @@ class App extends Component {
           <Account />
         </header>
 
-        <section className="App_Content">
+        <section className="App__Content">
           <Balance />
         </section>
       </div>
@@ -30,7 +30,7 @@ class App extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     loadBalance() {
-      dispatch(balanceActions.loadBalance())
+      dispatch(loadBalance())
     }
   }
 }

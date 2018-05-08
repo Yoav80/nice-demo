@@ -6,28 +6,28 @@ import React from 'react';
 const BalanceListRow = (props) => {
     const {from, date, description, amount} = props.rowData;
     const currency = props.currency;
+    // formating done by moment just because it is easy and more advanced
     const formattedDate = moment(new Date(date)).format('LLLL');
 
     return (
-        <a className="list-group-item list-group-item-action flex-column align-items-start">
-            <h2 className="mb-1 list-group-item-heading">
+        <a className="list-group-item list-group-item-action --animate">
+            <h2 className="mb-1 list-group-item-heading from">
                 from: {from || 'Unknown'}
-            </h2>
+            </h2>   
 
-            <h4 className="mb-1 list-group-item-text">
+            <h3 className="mb-1 list-group-item-text description">
                 {description}
-            </h4>
+            </h3>
 
-            <small className="mb-1 list-group-item-text">
+            <div className="mb-1 list-group-item-text formattedDate">
                 {formattedDate}
-            </small>
+            </div>
 
-            <div className="mb-1 list-group-item-text">
+            <div className="mb-1 list-group-item-text amount">
                 <span className="badge badge-success">
                     {amount} {currency}
                 </span>
             </div>
-
         </a>
     )
 }

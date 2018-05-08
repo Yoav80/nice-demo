@@ -10,7 +10,7 @@ class Account extends Component {
       
       if (error) {
         return (
-          <div className='Account'>
+          <div className='Account error'>
             Error loading account data 
           </div>
         )
@@ -37,7 +37,7 @@ function mapStateToProps(state) {
         error: true
       }
     }
-    
+
     const data = state.balance.account;
     const { balance, iban, name } = data;
     const currency = state.balance.currency;

@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
-import List from '../comnponents/List';
-import BalanceListRow from '../comnponents/BalanceListRow';
+import List from '../components/List/List';
+import BalanceListRow from '../components/BalanceListRow/BalanceListRow';
 
 
 class Balance extends Component {
-  
-    render() {       
-      const { transactions, fetchError , currency } = this.props;
-      
-      if (fetchError) {
-        return (
-          <div>
-              Error loading balance data.
-          </div>
-        )
-      }   
+  render() {       
+    const { transactions, fetchError , currency } = this.props;
+    
+    if (fetchError) {
       return (
-        <List>
-          {transactions.map( (rowData, index) => {
-              return (
-                <BalanceListRow rowData={rowData} currency={currency} key={index}/>
-              )
-          })}
-        </List>
+        <div><h1>Error loading balance data.</h1></div>
       )
-    }
-
+    }   
+    return (
+      <List>
+        {transactions.map( (rowData, index) => {
+            return (
+              <BalanceListRow rowData={rowData} currency={currency} key={index}/>
+            )
+        })}
+      </List>
+    )
   }
+}
   
-
-
-  function mapStateToProps(state) {
+function mapStateToProps(state) {
   return {
     transactions: state.balance.transactions,
     currency: state.balance.currency,
