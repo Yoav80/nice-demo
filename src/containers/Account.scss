@@ -6,8 +6,8 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-}
-
-.Account .Account__item {
-    padding: 0 10px;
+    
+    &__item {
+        padding: 0 10px;
+    }
 }
